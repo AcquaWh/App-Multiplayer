@@ -9,11 +9,6 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     [SerializeField]
     int roomSize;
 
-    void Start()
-    {
-        QuickStart();
-    }
-
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.AutomaticallySyncScene = true;

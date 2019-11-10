@@ -5,6 +5,10 @@ using Photon.Pun;
 
 public class NetworkController : MonoBehaviourPunCallbacks
 {
+
+    [SerializeField]
+    QuickStartLobbyController quickStartLobby;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,6 @@ public class NetworkController : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log($"Connected to {PhotonNetwork.CloudRegion} server");
+        quickStartLobby.QuickStart();
     }
 }
