@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     void Update()
     {
+        if(!photonView.IsMine) return;
         transform.Translate(Vector3.forward * axis.z * moveSpeed * Time.deltaTime);
         transform.Rotate(Vector3.up * axis.x * rotSpeed * Time.deltaTime);
     }
