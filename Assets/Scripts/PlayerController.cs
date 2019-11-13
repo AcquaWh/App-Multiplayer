@@ -5,7 +5,11 @@ using Photon.Pun;
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
-    new PhotonView photonView;
+    [SerializeField]
+    float moveSpeed;
+    [SerializeField]
+    float rotSpeed;
+    PhotonView photonView;
     [SerializeField]
     GameObject cam;
     void Start() 
@@ -16,4 +20,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
             cam.SetActive(true);
         }
     }
+
+    void Update()
+    {
+        transform.Translate(Vector3.forward * axis.z * moveSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * axis.x * rotSpeed * Time.deltaTime);
+    }
+
+    Vector3 axis{get => new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")); }
 }
