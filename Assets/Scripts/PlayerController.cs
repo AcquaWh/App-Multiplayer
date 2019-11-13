@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
-    PhotonView photonView;
+    new PhotonView photonView;
     [SerializeField]
     GameObject cam;
     void Start() 

@@ -7,6 +7,8 @@ using Photon.Pun;
 public class GameSetupController : MonoBehaviour
 {
 
+    [SerializeField]
+    Transform camtransform;
     void Start() 
     {
         createPlayer();
