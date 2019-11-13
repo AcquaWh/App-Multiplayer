@@ -9,12 +9,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
     float moveSpeed;
     [SerializeField]
     float rotSpeed;
-    PhotonView photonView;
     [SerializeField]
     GameObject cam;
     void Start() 
     {
-        photonView = GetComponent<PhotonView>();
         if(photonView.IsMine)
         {
             cam.SetActive(true);
